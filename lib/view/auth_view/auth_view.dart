@@ -88,11 +88,11 @@ class _AuthViewState extends State<AuthView> with TickerProviderStateMixin {
                         Get.to(() => EnterPhone());
                       },
                       onTapGoogle: () {
-                        googleSignController.googleSign();
+                        googleSignController.googleSign(context);
                       },
                       onTapSign: () {
                         if (formkey.currentState!.validate()) {
-                          signController.signIn();
+                          signController.signIn(context);
                         }
                       },
                     )
@@ -127,11 +127,11 @@ class _AuthViewState extends State<AuthView> with TickerProviderStateMixin {
                         Get.to(() => EnterPhone());
                       },
                       onTapGoogle: () {
-                        googleSignController.googleSign();
+                        googleSignController.googleSign(context);
                       },
                       onTapSign: () {
                         if (formkey.currentState!.validate()) {
-                          signController.signUp();
+                          signController.signUp(context);
                         }
                       },
                     )

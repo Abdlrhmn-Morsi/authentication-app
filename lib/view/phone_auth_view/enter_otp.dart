@@ -36,7 +36,7 @@ class EnterOtp extends StatelessWidget {
               fontSize: 18,
             ),
             CustomText(
-              text: '+2${controller.phoneNumber.text}',
+              text: '+20112345678',
               color: Colors.deepPurple,
               fontSize: 18,
             ),
@@ -54,7 +54,7 @@ class EnterOtp extends StatelessWidget {
                 },
                 color: Colors.deepPurple,
                 child: CustomText(
-                  text: 'Next',
+                  text: 'confirm',
                   color: Colors.white,
                   fontSize: 16,
                 ),

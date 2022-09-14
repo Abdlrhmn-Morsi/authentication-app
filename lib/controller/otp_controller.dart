@@ -13,8 +13,8 @@ class OtpController extends GetxController {
   FirebaseAuth auth = FirebaseAuth.instance;
 
   void phonVerify() async {
+    
     await FirebaseAuth.instance.verifyPhoneNumber(
-
       phoneNumber: '+2${phoneNumber.text}',
       verificationCompleted: (PhoneAuthCredential credential) {},
       verificationFailed: (FirebaseAuthException e) {

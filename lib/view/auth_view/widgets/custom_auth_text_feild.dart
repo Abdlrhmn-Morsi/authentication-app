@@ -30,6 +30,7 @@ class _CustomAuthTextFiledState extends State<CustomAuthTextFiled> {
       children: [
         SizedBox(
           child: TextFormField(
+            style: TextStyle(color: Colors.deepOrange.shade900),
             controller: widget.controller,
             validator: (v) {
               if (widget.isEmail) {

@@ -1,7 +1,9 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 
+import '../../forget_password_view/forget_password_view.dart';
 import '../../widgets/custom_text.dart';
 
 class CustomAuthBtns extends StatelessWidget {
@@ -40,7 +42,20 @@ class CustomAuthBtns extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(height: 10),
+        SizedBox(height: isLogIn ? 15 : 5),
+        isLogIn
+            ? GestureDetector(
+                onTap: () {
+                  Get.to(() => ForgetPasswordView());
+                },
+                child: CustomText(
+                  text: 'Forget Password?',
+                  fontSize: 14,
+                  color: Colors.blue.shade300,
+                ),
+              )
+            : Container(),
+        SizedBox(height: isLogIn ? 15 : 5),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [

@@ -1,4 +1,5 @@
 import 'package:authentication_app/controller/sign_controller.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -10,9 +11,15 @@ class GoogleSignController extends GetxController {
   FirebaseAuth auth = FirebaseAuth.instance;
   GoogleSignInAccount? user;
 
-  Future googleSign() async {
-    controller.isLoading = true;
-
+  Future googleSign(context) async {
+    showDialog(
+      context: context,
+      builder: (context) => const Center(
+        child: CircularProgressIndicator(
+          color: Colors.deepPurple,
+        ),
+      ),
+    );
     final googleAccount = await GoogleSignIn().signIn();
     user = googleAccount;
 
@@ -22,7 +29,7 @@ class GoogleSignController extends GetxController {
       idToken: googleAuth.idToken,
     );
     await auth.signInWithCredential(credential);
-    controller.isLoading = false;
+    Navigator.pop(context);
     Get.to(() => HiFrom(from: 'Google', isGoogle: true));
     update();
   }
