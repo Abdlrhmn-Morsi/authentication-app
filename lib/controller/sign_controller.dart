@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../view/hi_from.dart';
@@ -6,10 +7,11 @@ import '../view/hi_from.dart';
 class SignController extends GetxController {
   FirebaseAuth auth = FirebaseAuth.instance;
 
-  dynamic suEmail;
-  dynamic suPassword;
-  dynamic siEmail;
-  dynamic siPassword;
+  final signINemailTextController = TextEditingController();
+  final signINpasswordTextController = TextEditingController();
+  final signUPemailTextController = TextEditingController();
+  final signUPpasswordTextController = TextEditingController();
+  final confirmPasswordController = TextEditingController();
   bool isLoading = true;
   bool isVarified = false;
 
@@ -17,8 +19,8 @@ class SignController extends GetxController {
     try {
       isLoading = true;
       UserCredential credential = await auth.createUserWithEmailAndPassword(
-        email: suEmail,
-        password: suPassword,
+        email:signUPemailTextController.text ,
+        password: signUPpasswordTextController.text,
       );
       isLoading = false;
       Get.to(() => HiFrom(from: 'SIGN UP'));
@@ -33,8 +35,8 @@ class SignController extends GetxController {
     try {
       isLoading = true;
       UserCredential credential = await auth.signInWithEmailAndPassword(
-        email: siEmail,
-        password: siPassword,
+        email: signINemailTextController.text,
+        password: signINpasswordTextController.text,
       );
       isLoading = false;
       Get.to(() => HiFrom(from: 'SIGN IN'));

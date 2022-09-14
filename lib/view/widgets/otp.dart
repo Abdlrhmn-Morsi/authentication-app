@@ -28,7 +28,7 @@ class OtpWidget extends StatelessWidget {
           fieldWidth: 40,
           borderWidth: 2,
           activeColor: Colors.black,
-          activeFillColor: Colors.black,
+          activeFillColor: Colors.deepPurple,
           inactiveColor: Colors.black,
           inactiveFillColor: Colors.white,
           selectedColor: Colors.black,

@@ -16,31 +16,29 @@ class EnterPhone extends StatelessWidget {
     return flag;
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const SizedBox(height: 0),
-          Padding(
-            padding: const EdgeInsets.only(left: 20),
-            child: CustomText(
-              text: 'What is your phone number?',
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
-            ),
+          CustomText(
+            text: 'What is your phone number?',
+            color: Colors.deepPurple,
+            fontWeight: FontWeight.bold,
           ),
           const SizedBox(height: 10),
-          Padding(
-            padding: const EdgeInsets.only(left: 20),
-            child: CustomText(
-              text: 'please enter your phone number to\n verify your account',
-              color: Colors.black,
-              fontSize: 18,
-            ),
+          CustomText(
+            text: 'please enter your phone number to',
+            color: Colors.black,
+            fontSize: 18,
+          ),
+          CustomText(
+            text: 'verify your account',
+            color: Colors.black,
+            fontSize: 18,
           ),
           const SizedBox(height: 50),
           Padding(
@@ -53,10 +51,11 @@ class EnterPhone extends StatelessWidget {
                     alignment: Alignment.center,
                     height: 50,
                     decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
                         border: Border.all(color: Colors.black, width: 2)),
                     child: Text(
                       generateCountryFlag() + ' +20',
-                      style: TextStyle(fontSize: 18, letterSpacing: 2.0),
+                      style: TextStyle(fontSize: 16, letterSpacing: 2.0),
                     ),
                   ),
                 ),
@@ -66,7 +65,9 @@ class EnterPhone extends StatelessWidget {
                   child: GetBuilder<OtpController>(
                     builder: (controller) => Container(
                       height: 50,
-                      decoration: BoxDecoration(),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
                       child: TextFormField(
                         controller: controller.phoneNumber,
                         cursorColor: Colors.black,
@@ -83,19 +84,19 @@ class EnterPhone extends StatelessWidget {
                         },
                         decoration: InputDecoration(
                           hintText: '',
-                          contentPadding:const EdgeInsets.all(8),
+                          contentPadding: const EdgeInsets.all(8),
                           border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(0),
+                            borderRadius: BorderRadius.circular(8),
                           ),
                           enabledBorder: OutlineInputBorder(
                             borderSide:
-                              const  BorderSide(color: Colors.black, width: 2),
-                            borderRadius: BorderRadius.circular(0),
+                                const BorderSide(color: Colors.black, width: 2),
+                            borderRadius: BorderRadius.circular(8),
                           ),
                           focusedBorder: OutlineInputBorder(
-                            borderSide:const BorderSide(
+                            borderSide: const BorderSide(
                                 color: Colors.deepPurpleAccent, width: 2),
-                            borderRadius: BorderRadius.circular(0),
+                            borderRadius: BorderRadius.circular(8),
                           ),
                         ),
                       ),
@@ -110,6 +111,9 @@ class EnterPhone extends StatelessWidget {
             margin: const EdgeInsets.only(right: 20),
             alignment: Alignment.bottomRight,
             child: MaterialButton(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
+              ),
               minWidth: 100,
               height: 50,
               onPressed: () {
@@ -121,7 +125,7 @@ class EnterPhone extends StatelessWidget {
                 color: Colors.white,
                 fontSize: 16,
               ),
-              color: Colors.black,
+              color: Colors.deepPurple,
             ),
           ),
           const SizedBox(height: 100),

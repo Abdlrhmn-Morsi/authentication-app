@@ -2,8 +2,8 @@ import 'package:authentication_app/controller/sign_controller.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import '../view/authentication/enter_otp.dart';
 import '../view/hi_from.dart';
+import '../view/phone_auth_view/enter_otp.dart';
 
 SignController controller = Get.find();
 

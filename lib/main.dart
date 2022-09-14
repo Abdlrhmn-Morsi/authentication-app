@@ -1,5 +1,4 @@
-import 'package:authentication_app/view/authentication/enter_otp.dart';
-import 'package:authentication_app/view/home.dart';
+import 'package:authentication_app/view/home_view.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -22,7 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      home: HomeView(),
     );
   }
 }
