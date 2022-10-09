@@ -1,16 +1,17 @@
-# authentication_app
-
+# authentication app
+![authentication app](app_github_bg.png)
 A new Flutter project.
 
-## Getting Started
+## App Features
 
-This project is a starting point for a Flutter application.
+- Sign in /up email and password
+- Sign with Google
+- Sign with Facebook
 
-A few resources to get you started if this is your first Flutter project:
+- Sign with Phone number
+- Reset your password (forget password)
+- basic validation 
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- MVC patterns
+- State management => GetX
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
